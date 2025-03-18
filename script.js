@@ -13,19 +13,64 @@ function getComputerChoice(choice) {
         randString = "Scissors"
     }
     
-    console.log(randString);
+   return randString;
+   
 }
 
 
 function getHumanChoice(pick) {
 
     pick = prompt("Please choose Rock, Paper, or Scissors")
+    
 
-    console.log(pick);
+    return pick.toUpperCase();
 
+}
+
+function playRound(humanChoice, computerChoice) {
+    if ((humanSelection == "ROCK") && (computerSelection == "Paper")) {
+        computerScore++
+        console.log("Human loses, Computer wins!")
+    }
+    else if ((humanSelection == "ROCK") && (computerSelection == "Scissors")) {
+        humanScore++
+        console.log("Human wins, Computer loses!")
+    }
+    else if ((humanSelection == "ROCK") && (computerSelection == "Rock")) {
+        console.log("Human and Computer Tie... No points awarded")
+    }
+    else if ((humanSelection == "PAPER") && (computerSelection == "Paper")) {
+        console.log("Human and Computer Tie... No points awarded")
+    }
+    else if ((humanSelection == "PAPER") && (computerSelection == "Scissors")) {
+        computerScore++
+        console.log("Human loses, Computer wins!")
+    }
+    else if ((humanSelection == "PAPER") && (computerSelection == "Rock")) {
+        humanScore++
+        console.log("Human wins, Computer loses!")
+    }
+    else if ((humanSelection == "SCISSORS") && (computerSelection == "Paper")) {
+        humanScore++
+        console.log("Human wins, Computer loses!")
+    }
+    else if ((humanSelection == "SCISSORS") && (computerSelection == "Scissors")) {
+        console.log("Human and Computer Tie... No points awarded")
+    }
+    else if ((humanSelection == "SCISSORS") && (computerSelection == "Rock")) {
+        computerScore++
+        console.log("Human loses, Computer wins!")
+    }
+    else {
+        console.log("Please enter Rock, Paper, or Scissors.")
+    }
 }
 let humanScore = 0;
 let computerScore = 0;
 
-getComputerChoice();
-getHumanChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+console.log("Computer's choice: " + computerSelection);
+console.log("Human Score: " + humanScore);
+console.log("Computer Score: " + computerScore);
