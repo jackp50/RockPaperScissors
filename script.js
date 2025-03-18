@@ -16,14 +16,11 @@ function getComputerChoice(choice) {
    
 }
 
-
 function getHumanChoice(pick) {
 
     pick = prompt("Please choose Rock, Paper, or Scissors")
-    
 
     return pick.toUpperCase();
-
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -69,9 +66,6 @@ function playRound(humanChoice, computerChoice) {
     else {
         console.log("Please enter Rock, Paper, or Scissors.")
     }
-
-    console.log("Human Score: " + humanScore);
-    console.log("Computer Score: " + computerScore);
 }
 
 function playGame() {
@@ -85,10 +79,8 @@ function playGame() {
         }
         else if (roundResult == "computer") {
             computerScore++
-
         }
-
-        console.log(`Current Scores: Human - ${humanScore}, Computer - ${computerScore}`);
+        console.log(`Current Scores: Human: ${humanScore}, Computer: ${computerScore}`);
     }
 
     if (humanScore === 5) {
@@ -96,7 +88,4 @@ function playGame() {
     } else if (computerScore === 5) {
         console.log("Computer has won the game");
     }
-
-
-    
 }
