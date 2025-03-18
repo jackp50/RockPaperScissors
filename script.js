@@ -1,4 +1,3 @@
-console.log("Hello World");
 
 function getComputerChoice(choice) {
     choice = Math.random();
@@ -28,6 +27,12 @@ function getHumanChoice(pick) {
 }
 
 function playRound(humanChoice, computerChoice) {
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    let humanScore = 0;
+    let computerScore = 0;
+    console.log("Computer's choice: " + computerSelection);
     if ((humanSelection == "ROCK") && (computerSelection == "Paper")) {
         computerScore++
         console.log("Human loses, Computer wins!")
@@ -64,13 +69,23 @@ function playRound(humanChoice, computerChoice) {
     else {
         console.log("Please enter Rock, Paper, or Scissors.")
     }
-}
-let humanScore = 0;
-let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
-console.log("Computer's choice: " + computerSelection);
-console.log("Human Score: " + humanScore);
-console.log("Computer Score: " + computerScore);
+    console.log("Human Score: " + humanScore);
+    console.log("Computer Score: " + computerScore);
+}
+
+// function playGame() {
+//     playRound(humanSelection, computerSelection);
+//     let humanScore = 0;
+//     let computerScore = 0;
+
+//     if ((humanScore || computerScore) == 5) {
+//         console.log("Game Over");
+//     }
+//     else {
+//         console.log("Play again");
+//     }
+
+
+    
+// }
